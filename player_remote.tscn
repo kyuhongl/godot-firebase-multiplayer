@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdsgc2r8jyfqu"]
+
+[ext_resource type="Script" path="res://scripts/player_remote.gd" id="1_lskyr"]
+[ext_resource type="Texture2D" uid="uid://b5e2aducnjskg" path="res://assets/Basic Charakter Spritesheet.png" id="2_d00pg"]
+[ext_resource type="Script" path="res://scripts/player_animation.gd" id="3_846vp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcua6"]
+size = Vector2(14, 9.5)
+
+[node name="PlayerRemote" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+position = Vector2(609, 399)
+collision_layer = 0
+script = ExtResource("1_lskyr")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_d00pg")
+hframes = 4
+vframes = 4
+script = ExtResource("3_846vp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.75)
+shape = SubResource("RectangleShape2D_lcua6")
